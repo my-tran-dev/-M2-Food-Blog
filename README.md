@@ -32,7 +32,7 @@ DATABASE_URL=mysql://db_user:db_password@host:port/db_name?serverVersion=*.*
 
 ## Initialiser projet 
 ```GIT
-git clone 
+git clone https://github.com/my-tran-dev/-M2-Food-Blog.git
 ```
 
 ```PHP
@@ -109,11 +109,6 @@ heroku git:remote -a nom-projet
 git push heroku master or git push heroku main
 ```
 ##
-
-## Liens vers site déployé
-heroku open
-https://myfoodrecipeblog.herokuapp.com/
-:warning: Site en cours de dévéloppement.
 
 ## Base de données utilisé 
 Postgresql de Heroku
