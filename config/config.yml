@@ -1,0 +1,8 @@
+# app/config/config.yml
+twig:
+    exception_controller:  AppBundle:Exception:showException
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable:   true

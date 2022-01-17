@@ -1,0 +1,77 @@
+<div class="collapse bg-dark nav-style" id="navbarHeader">
+	<div class="container">
+		<div class="row">
+
+			<div class="{{ is_granted('ROLE_USER') ? 'col-sm-6' : 'col-sm-8'}} py-4">
+				<h4 class="text-white">À propos</h4>
+				<p class="text-muted">
+					Notre blog a été créé avec Symfony dans le cadre d'un projet web de la matière E-Application.<br>
+					Nous sommes NGUYEN Huu-Khang et TRAN Thi Tra-My
+					<br/>
+					étudiants en Master 2 Informatique du parcours AIGLE de l'Université de Montpellier.
+				</p>
+			</div>
+
+			<div class="col-sm-2 py-4">
+					<h4 class="text-white">
+						Notre API
+					</h4>
+					<p class="text-muted">
+						<i class="far fa-hand-point-right"></i>
+						<a href="{{ path("api_index") }}">
+							Les derniers blogs</a><br/>
+						5 articles plus récent !
+					</p>
+					<p class="text-muted">
+						<i class="far fa-hand-point-right"></i>
+						<a href="{{ path("api_weather") }}">
+							Météo</a><br>
+						Température de votre ville !
+					</p>
+				</div>
+
+			{% if is_granted("ROLE_USER") == false %}
+
+				<div class="col-sm-2 py-4">
+					<h4 class="text-white">
+						<a href="{{ path("app_login") }}">Connexion</a>
+					</h4>
+					<p class="text-muted">
+						Connecter pour ajouter une nouvelle recette.
+					</p>
+				</div>
+
+			{% else %}
+
+				<div class="col-sm-2 py-4">
+					<h4 class="text-white">
+						<a href="{{ path('post_new') }}">Ajouter recette</a>
+					</h4>
+					<p class="text-muted">
+						Voulez-vous écrire quelques choses aujourd'hui ?
+					</p>
+				</div>
+				<div class="col-sm-2 py-4">
+					<h4 class="text-white">
+						<a href="{{ path("app_logout") }}">Déconnexion</a>
+					</h4>
+					<p class="text-muted">
+						Au revoir !
+					</p>
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+	<div class="container" >
+		<a href="{{ path("post_index", { 'page' : 1}) }}" class="navbar-brand d-flex align-items-center">
+			<img src="{{ asset('assets/img/kitchen.png') }}" alt="my blog">&nbsp;&nbsp;
+			<b style= "font-family: Cursive;">Sêp péo's Kitchen</b>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
+</div>

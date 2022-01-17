@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');
+
+.post-archive{
+    box-shadow: 0 0.375rem 1.5rem 0 rgba(140, 152, 164, 0.125);
+    border: 1px solid #e7eaf3;
+    border-radius: 0.3125rem;
+    background: #fff;
+    word-break: break-word;
+    font-family: 'Rubik', sans-serif;
+}
+
+.post-header{
+    text-decoration: none;
+    color: #b0b7be;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.post-title h1 {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    color: #2f2f2f;
+}
+
+.single-page-content{
+    color: #666;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.side {
+    margin: 10px 0 10px 0;
+}
+
+.side h3 {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.side ul{
+    margin: 0;
+    padding: 0;
+}
+
+.side li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    color: #2f2f2f;
+    padding: 15px 0!important;
+    margin: 0!important;
+    border-bottom: solid 1px #dae0e7;
+    padding-bottom: 20px;
+}
+
+.side a {
+    color: #2f2f2f;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.side-content-date p{
+    text-decoration: none;
+    color: #b0b7be;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+}

@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lecture - Sếp péo's blog{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/css/show.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-2">
+            <a class="btn btn-light btn-sm" href="{{ path('post_index') }}" role="button"> <i class="fas fa-arrow-left"></i> Retourner </a>
+        </div>
+                
+                
+        {% if is_granted("ROLE_USER") == true %}
+        <div class="offset-md-6 col-md-4 ">
+            <div class="row">
+                <div class="offset-md-3 col-md-4 show-button">
+                    <a class="btn btn-light btn-sm" href="{{ path('post_edit', { ('slug') : post.urlAlias}) }}" role="button"><i class="fas fa-edit"></i> Editer </a>
+                </div>
+                <div class="col-md-5">
+                    {{ include('post/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+        
+        {% endif %}
+    </div>
+    <div class="row mb-4">
+        <!-- Blog Entries Column -->
+        <div class="col-md-9 px-3 pr-lg-5 pl-lg-0">
+            <div class="post-archive my-5">
+                <!-- header -->
+                <div class="d-md-flex post-header  text-capitalize px-5 pt-3 pb-2">
+                    <div class="col-sm-12 p-0 align-self-center">
+                        <div class="d-md-flex p-0">
+                            <div class="ml-md-auto mr-md-0 d-md-flex">
+                                Créé le : {{ post.published | date("d/m/Y", "Europe/Paris") }} | mis à jour le : {{ post.updatedAt | date("d/m/Y", "Europe/Paris")}} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- thumbnail -->
+                <div class="post-thumbnail mt-2 mb-4 justify-content-center">
+                    {% if post.illustration %}
+                        <img class="center" src="{{vich_uploader_asset(post) | imagine_filter('squared_thumbnail_large')}}" alt="{{ post.title }}">
+                    {% else %}
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" focusable="false">
+							<title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+                    {% endif %}
+                </div>
+
+                <!-- content -->
+                <div class="post-title my-3 d-flex flex-column px-5">
+                    <h1>{{ post.title }}</h1>
+                    <div class="single-page-content pb-5">
+                        <p>{{ post.content | nl2br }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        
+            
+        </div>
+
+        <div class="col-md-3 px-5 my-5 ">
+            <div id="text-11" class="side">
+                <h3 class="side-title">Les articles récents</h3>
+                <div class="side-content">
+                    <ul class="custom-posts-list">
+                        {% for featuredPost in featuredPosts %}
+                        <li>
+                            <a href="{{ path('post_show', {('slug') : featuredPost.urlAlias}) }}">
+                            {{ featuredPost.title }}
+                            </a>
+                            <div class="side-content-date">
+                                <p>
+                                    <small>
+                                        Créé le : {{ featuredPost.published | date("d/m/Y", "Europe/Paris") }} | 
+                                        mis à jour le : {{ featuredPost.updatedAt | date("d/m/Y", "Europe/Paris")}}
+                                    </small>
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

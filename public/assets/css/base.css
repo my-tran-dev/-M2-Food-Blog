@@ -1,0 +1,114 @@
+html,
+body {
+  height: 100%;
+}
+
+
+main {
+  position: relative;
+  min-height: 100%;
+}
+
+.container-custom {
+  padding-bottom: 100px;
+}
+
+.nav-style a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-style {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-style a {
+  text-decoration: none;
+  color: white;
+}
+
+.title-too-long{
+  width: 15em; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis; /* give the beautiful '...' effect */
+}
+
+.content-too-long {
+  width: 20em; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis; /* give the beautiful '...' effect */
+}
+
+@media screen and (max-width: 1200px) {
+  .content-too-long {
+    width: 10em; /* the element needs a fixed width (in px, em, %, etc) */
+    overflow: hidden; /* make sure it hides the content that overflows */
+    white-space: nowrap; /* don't break the line */
+    text-overflow: ellipsis; /* give the beautiful '...' effect */
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-style a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+.fw-light {
+  font-family: Cursive;
+  font-size: 60px;
+  color: white;
+  font: outline;
+}
+
+.lead {
+  font-family: cursive;
+  color: rgb(183, 199, 241);
+  font-size: 25px;
+}
+
+.block-small {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.btn-light {
+  background-color: cornflowerblue;
+}
+
+.badge-danger {
+  background-color: red;
+}
+
+.page-item.active .page-link{
+  border-color: white;
+}
+
+.page-item a{
+  color: black;
+}
+
+.pagination .active a{
+  background-color: pink !important;
+  border: 1px solid white;
+
+}
+
+.pagination .active a.page-link{
+  color: black;
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+	- Sếp péo's blog
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+
+		{% if title == "Modifier l'article" %}
+			<div class="col-md-9">
+				<h2>{{ title }}</h2>
+			</div>
+			<div class="col-md-2 ml-auto my-auto">
+				{{ include('post/_delete_form.html.twig') }}
+			</div>
+			<div class="col-md-1 my-auto ml-auto">
+				<a class="btn btn-light btn-sm" href="{{ path('post_index') }}">
+					<i class="fas fa-undo-alt"></i>
+					Retour</a>
+			</div>
+
+		{% else %}
+			<div class="col-md-11">
+				<h2>{{ title }}</h2>
+			</div>
+			
+			<div class="col-md-1 my-auto">
+				<a class="btn btn-light btn-sm float-right" href="{{ path('post_index') }}">
+					<i class="fas fa-undo-alt"></i>
+					Retour</a>
+			</div>
+
+		{% endif %}
+
+	</div>
+
+	<hr>
+
+	{{ form_start(form) }}
+	<div class="row mb-3">
+		<div class="col-md-3">
+			{{ form_row(form.title) }}
+			{{ form_row(form.imageFile)}}
+		</div>
+		<div class="col-md-9">{{ form_row(form.content) }}</div>
+	</div>
+	<div class="col-md-1 offset-md-11 mb-3">{{ form_row(form.submit) }}</div>
+	{{ form_end(form) }}
+{% endblock %}
