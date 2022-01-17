@@ -10,7 +10,7 @@ mdp : 123456
 https://myfoodrecipeblog.herokuapp.com/
 
 ## Commentaires
-Nous n'avons pas pu implémenter une illustration pour chaque article quand on charge le site déployé car heroku n'accepte pas les fichiers statiques. Il fallait implémenter le [service tier](https://devcenter.heroku.com/articles/s3) pour que l'on puisse charger les images en ligne. Sinon l'option charger une image est possible en local. Les bundles utilisés pour cet option sont [VichUploaderBundle](https://github.com/dustin10/VichUploaderBundle) et [LiipImagineBundle](https://github.com/liip/LiipImagineBundle).
+Nous n'avons pas pu implémenter une illustration pour chaque article quand on charge le site déployé car heroku n'accepte pas les fichiers statiques. Il fallait implémenter le [service tier](https://devcenter.heroku.com/articles/s3) pour que l'on puisse charger les images en ligne. Sinon l'option charger une image est possible en local. Les bundles utilisés pour cet option sont [VichUploaderBundle](https://github.com/dustin10/VichUploaderBundle) et [LiipImagineBundle](https://github.com/liip/LiipImagineBundle). Il faudra donc déposer les images sur un serveur de stockage comme AWS.
 
 Nous avons intégré l'api pour récupérer les [6 derniers blogs](https://myfoodrecipeblog.herokuapp.com/api/posts) ainsi qu'[un météo](https://myfoodrecipeblog.herokuapp.com/api/weather) qui utilise [l'api du site météo](https://openweathermap.org/api).
 
